@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PreparacionSeleccionada extends Model
 {
-    protected $table = 'preparaciones_seleccionados';
+    protected $table = 'preparaciones_seleccionadas';
 
     /**
      * Atributos asignables

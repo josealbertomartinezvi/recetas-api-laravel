@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('preparaciones')->insert([
             'id' => 2,
-            'nombre' => 'ensalada de fruta',
+            'nombre' => 'ensalada de frutas',
             'created_at' => '2020-06-14 00:00:00',
             'updated_at' => '2020-06-14 00:00:00'
         ]);
