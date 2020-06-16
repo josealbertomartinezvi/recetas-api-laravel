@@ -25,4 +25,8 @@ class PreparacionSeleccionada extends Model
     protected $hidden = [
         'created_at', 'updated_at'
     ];
+
+    public function ingredientesSeleccionados(){
+        return $this->hasMany('App\IngredienteSeleccionado', 'id_preparacion_seleccionada');
+    }
 }

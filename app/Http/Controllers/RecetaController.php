@@ -9,24 +9,35 @@ use App\Preparacion;
 use App\Ingrediente;
 use App\IngredienteSeleccionado;
 
+use App\Http\Resources\RecetaResource;
+
 class RecetaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Metodo para obtener todas las recetas y sus detalles
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        $preparaciones = PreparacionSeleccionada::all();
+        foreach ($preparaciones as $preparacion){
+            $preparacion['preparacion'] = Preparacion::where('id', $preparacion['id_preparacion'])->value('nombre');
+            $preparacion['ingredientes'] = IngredienteSeleccionado::where('id_preparacion_seleccionada', $preparacion['id'])->get();
+            foreach ($preparacion['ingredientes'] as $ingrediente){
+                $ingrediente['ingredienteSeleccionado'] = Ingrediente::where('id', $ingrediente['id_ingrediente'])->value('nombre');
+            }
+        }
+
         return response()->json([
             'susses' => true,
-            'message' => 'Lista de recetas',
+            'data' => $preparaciones,
             'codigo' => 200
         ], 200);  
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Metodo para almacenar una nueva receta
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response

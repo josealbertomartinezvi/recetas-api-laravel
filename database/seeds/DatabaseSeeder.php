@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('ingredientes')->insert([
             'id' => 7,
-            'nombre' => 'crocoli',
+            'nombre' => 'brocoli',
             'id_preparacion' => 2,
             'created_at' => '2020-06-14 00:00:00',
             'updated_at' => '2020-06-14 00:00:00'
