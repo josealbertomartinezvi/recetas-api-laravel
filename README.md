@@ -14,3 +14,8 @@ EL proyecto esta realizado con laravel por tanto es necesario tener instalado co
 5. Ejecutar el comando "php artisan db:seed" en la ventana de comandos para ejjecutar los seeders que continiene la información inicial con la cual se permitira almacenar los nuevos registros en la base de datos.
 6. Ejecutar el comando "php artisan serve" para ejecutar el servisor que se inicializara en http://127.0.0.1:8000/ y donde se podran relizar peticiones en http://127.0.0.1:8000/api/
 7. Probar el servidor con los endpoints del archivo api.php en la ruta "routes/api.php"
+
+
+## Adicional
+
+El frontend del proyecto se realizó utilizando React y el cual se encuentra en el repositorio https://github.com/josealbertomartinezvi/recetas-react.git
